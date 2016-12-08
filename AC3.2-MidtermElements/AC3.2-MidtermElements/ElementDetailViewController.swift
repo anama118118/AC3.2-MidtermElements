@@ -59,19 +59,19 @@ class ElementDetailViewController: UIViewController {
         if let validElectrons = self.element.electrons {
             self.electronsLabel.text = "Electrons: \(validElectrons)"
         } else {
-            self.meltingPointLabel.text = "Electrons: N/A"
+            self.electronsLabel.text = "Electrons: N/A"
         }
         if let validIonEnergy = self.element.ion_energy {
-            self.groupLabel.text = "Group: \(self.element.group)"
             self.ionEnergyLabel.text = "Ion Energy: \(validIonEnergy)"
         }else {
-            self.meltingPointLabel.text = "Ion Energy: N/A"
+            self.ionEnergyLabel.text = "Ion Energy: N/A"
         }
         self.navigationItem.title = element.name
         self.symbolLabel.text = "\(self.element.symbol)"
         self.numberLabel.text = "\(self.element.number)"
         self.weightLabel.text = "\(self.element.weight)"
         self.discoveryYearLabel.text = "Discovery Year: \(self.element.discovery_year)"
+        self.groupLabel.text = "Group: \(self.element.group)"
     }
     
     @IBAction func myFavoriteElementPostAction(_ sender: UIButton) {
