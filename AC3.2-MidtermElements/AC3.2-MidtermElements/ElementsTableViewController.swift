@@ -49,6 +49,8 @@ class ElementsTableViewController: UITableViewController {
         cell.textLabel?.text = element.name
         cell.detailTextLabel?.text = detailText
         
+        cell.imageView?.image = #imageLiteral(resourceName: "default-placeholder") //nil
+        
         APIRequestManager.manager.getData(endPoint: "https://s3.amazonaws.com/ac3.2-elements/\(element.symbol)_200.png") { (data: Data?) in
             guard let validImageData = data else { return }
             DispatchQueue.main.async {
